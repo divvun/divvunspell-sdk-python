@@ -1,0 +1,6 @@
+[project]
+name = "divvunspell"
+
+[build-system]
+requires = ["maturin"]
+build-backend = "maturin"

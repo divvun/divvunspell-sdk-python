@@ -1,0 +1,17 @@
+[package]
+name = "divvunspell-python"
+version = "0.1.0"
+authors = ["Brendan Molloy <brendan@bbqsrc.net>"]
+edition = "2018"
+
+[lib]
+name = "divvunspell"
+crate-type = ["cdylib"]
+
+[dependencies]
+divvunspell = { git = "https://github.com/divvun/divvunspell", branch = "main", features = ["compression"] }
+owning_ref = "0.4.1"
+
+[dependencies.cpython]
+version = "0.5"
+features = ["extension-module"]
