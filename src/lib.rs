@@ -59,6 +59,8 @@ impl SpellerArchive {
 
 /// Speller that can suggest spelling corrections.
 ///
+/// **NOTE**: You must use `SpellerArchive.speller()` to get a Speller instance!
+///
 /// Usage:
 ///
 /// >>> speller.suggest("teh")
