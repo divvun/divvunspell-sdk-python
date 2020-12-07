@@ -7,10 +7,9 @@
 
 ## Quick start
 
-Import the library:
+Import the library, then get the `Speller` instance via the `SpellerArchive`:
 
 ```python
-# import divvunspell
 import divvunspell
 
 
