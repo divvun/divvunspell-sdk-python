@@ -1,7 +1,7 @@
 use std::sync::Arc;
 
-use pyo3::prelude::*;
 use divvunspell::{archive, speller};
+use pyo3::prelude::*;
 
 #[pymodule]
 fn divvunspell(_py: Python, m: &PyModule) -> PyResult<()> {
@@ -40,6 +40,9 @@ impl Speller {
     fn suggest(&self, word: String) -> PyResult<Vec<(String, f32)>> {
         let speller = Arc::clone(&self.speller);
         let results = speller.suggest(&word);
-        Ok(results.into_iter().map(|x| (x.value.to_string(), x.weight)).collect::<Vec<_>>())
+        Ok(results
+            .into_iter()
+            .map(|x| (x.value.to_string(), x.weight))
+            .collect::<Vec<_>>())
     }
 }
