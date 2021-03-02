@@ -2,8 +2,7 @@
 
 set -eux
 
-DOCKER_IMAGE=quay.io/pypa/manylinux2010_x86_64
-PLAT=manylinux2010_x86_64
+DOCKER_IMAGE=build-rusty-wheels
 
-docker pull "${DOCKER_IMAGE}"
-docker run --rm -e "${PLAT}" -v "$(pwd):/io" "${DOCKER_IMAGE}" /io/libexec/build-wheels.sh
+docker build . --tag $DOCKER_IMAGE
+docker run --rm -v "$(pwd):/io" $DOCKER_IMAGE /io/libexec/build-wheels.sh
