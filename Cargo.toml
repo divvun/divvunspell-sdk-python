@@ -15,7 +15,7 @@ crate-type = ["cdylib"]
 divvunspell = { git = "https://github.com/divvun/divvunspell", branch = "main", features = ["compression"] }
 
 [dependencies.pyo3]
-version = "0.12.4"
+version = "0.13.4"
 features = ["extension-module"]
 
 [package.metadata.maturin]
