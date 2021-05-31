@@ -46,7 +46,8 @@ struct SpellerArchive {
 impl SpellerArchive {
     #[new]
     fn new(path: String) -> PyResult<Self> {
-        let ar = archive::open(std::path::Path::new(&path)).unwrap();
+        let ar = archive::open(std::path::Path::new(&path))
+            .map_err(|e| PyErr::new::<pyo3::exceptions::PyException, _>(format!("{}", e)))?;
         Ok(SpellerArchive { archive: ar })
     }
 
@@ -86,5 +87,11 @@ impl Speller {
             .into_iter()
             .map(|x| (x.value.to_string(), x.weight))
             .collect::<Vec<_>>())
+    }
+
+    /// Returns whether a word is spelt correctly.
+    fn is_correct(&self, word: String) -> PyResult<bool> {
+        let speller = Arc::clone(&self.speller);
+        Ok(speller.is_correct(&word))
     }
 }
