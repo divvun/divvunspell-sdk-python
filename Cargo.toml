@@ -5,18 +5,18 @@ authors = ["Brendan Molloy <brendan@bbqsrc.net>"]
 edition = "2018"
 
 [lib]
-name = "divvunspell-python"
+name = "divvunspell"
 crate-type = ["cdylib"]
 
 [dependencies]
-divvunspell-python = { git = "https://github.com/divvun/divvunspell", branch = "main", features = ["compression"] }
+divvunspell = { git = "https://github.com/divvun/divvunspell", branch = "main", features = ["compression"] }
 
 [dependencies.pyo3]
 version = "0.12.4"
 features = ["extension-module"]
 
 [package.metadata.maturin]
-name = "divvunspell-python"
+name = "divvunspell"
 classifiers = [
   "Programming Language :: Rust"
 ]
