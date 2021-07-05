@@ -1,6 +1,16 @@
-# divvunspell-python
+# DivvunSpell SDK for Python
+
+[![PyPI](https://img.shields.io/pypi/v/divvunspell)](https://pypi.org/project/divvunspell)
 
 ## Installation
+
+### From PyPI
+
+```
+pip install divvunspell
+```
+
+### From source
 
 - Install Rust from https://rustup.rs/.
 - Run `pip install .` or the equivalent for your environment
