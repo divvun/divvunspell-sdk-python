@@ -1,5 +1,5 @@
 [package]
-name = "divvunspell"
+name = "divvunspell-python"
 version = "0.1.0"
 authors = ["Brendan Molloy <brendan@bbqsrc.net>"]
 edition = "2018"
